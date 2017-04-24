@@ -33,10 +33,10 @@ Webinar April 25 to show debugging visually.
 
 ### Old-Fashioned Debugging
 
-- First problem to solve
+- Problem: Where is 0,0
 - print statements
-- 
 - import pdb; pdb.set_trace()
+
 
 ### Visual Debugging
 

@@ -1,5 +1,3 @@
-import random
-
 import arcade as arcade
 
 
@@ -18,24 +16,13 @@ class MyGame(arcade.Window):
     def on_draw(self):
         arcade.start_render()
         output = f'Score: {self.score:02d}'
-        if self.is_stopped:
-            arcade.draw_text(output, 100, 100, arcade.color.WHITE)
-        self.is_stopped = True
+        arcade.draw_text(output, 100, 100, arcade.color.WHITE)
         self.all_sprites_list.draw()
 
     def animate(self, delta_time):
         self.all_sprites_list.update()
-        hit_list = arcade.check_for_collision_with_list(
-            self.player_sprite,
-            self.coin_list
-        )
-
-        for coin in hit_list:
-            coin.kill()
-            self.score += 1
 
     def on_mouse_motion(self, x, y, dx, dy):
-        self.is_stopped = False
         self.player_sprite.center_x = x
         self.player_sprite.center_y = y
 
