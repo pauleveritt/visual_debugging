@@ -15,7 +15,7 @@ class MyGame(arcade.Window):
 
     def on_draw(self):
         arcade.start_render()
-        output = f'Score: {self.score:02d}'
+        output = 'Score: %02d' % self.score
         arcade.draw_text(output, 100, 100, arcade.color.WHITE)
         self.all_sprites_list.draw()
 

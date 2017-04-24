@@ -46,7 +46,7 @@ Webinar April 25 to show debugging visually.
 
 ### Poking Around
 
-- Problem: I want to use f-string but I'm not sure how
+- Problem: I want to use f-string `f'Score: {self.score:02d}'` but I'm not sure how
 - Interactive would help
 - Set breakpoint, then use Evaluate Expression
 - Or, Console
