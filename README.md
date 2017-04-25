@@ -16,20 +16,7 @@ Webinar April 25 to show debugging visually.
 - Django/Flask template debugging
 - Viewing numpy/pandas data frames
 
-### Before
 
-- Delete Cython speedups
-  * <your distribution>\helpers\pydev\_pydevd_bundle
-  * Remove pydevd_cython.so
-- Uninstall ipython
-- Default theme, big font
-- Turn off Notifications and other toolbar stuff
-- Ensure Presentation Assistant is on
-- 1280x720
-- Check value of break on any Python exception
-- Django/Flask template debugging projects open
-- Test exists, with a run configuration for all tests
-- Have the numpy/pandas project open
 
 ### Old-Fashioned Debugging
 
@@ -67,7 +54,6 @@ Webinar April 25 to show debugging visually.
 - Set breakpoint, start regular stepping
 - Set breakpoint outside, and step into
 - Ditto, step over
-- Run to cursor
 - Problem: How does Arcade collisions work?
 - Add code then step into
 
@@ -75,23 +61,20 @@ Webinar April 25 to show debugging visually.
 
 - Problem: Are the number of coins actually decreasing?
 - Set breakpoint in for coin in hit_list
-- Add a watch expressin: len(self.coin_list)
+- Add a watch expression: len(self.coin_list)
 - Cause collision with multiple coins
 - Step through and see the watch expression value
 
 ### Stack Frames
 
-- Problem: Refactor the collision code to handle "model" 
-  of (a) get rid of sprite and (b) increase score
-- Change code
-- Set breakpoint after score is increased and coin removed
+- Problem: Which coin is in _set_center_x?
+- In for loop, step into setting the x
 - Move back up the stack
 - Observe the watch expression and self.score
 
 ### Debug During Testing
 
-- Problem: My "score is increasing" test doesn't match the 
-  value that I'm expecting
+- Problem: TDD for "Don't show score when mouse is moving"
 
 - Write a test to see if score goes up on collision
 
@@ -103,6 +86,32 @@ Webinar April 25 to show debugging visually.
 
 ### Attach to Process
 
+- Run ``game.py`` from command line
+
+- Use "Attach to Process" and then debug it
+
 ### Extract Type Information
 
+- Preferences -> Build -> Python Debugger, checkbox for 
+  `Collect`
+
 ### Django and Flask 
+
+- Open Flask project
+
+- Set a breakpoint in a template
+
+### Extra Credit
+
+- NodeJS/Chrome debugging
+
+- Configuring Stepping 
+
+- Keyboard shortcuts for stepping
+
+- Show Execution Point button in toolbar when you get lost
+
+- Mute Breakpoints button
+
+- Inspect watch value in separate window
+

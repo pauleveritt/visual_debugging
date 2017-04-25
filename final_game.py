@@ -1,6 +1,6 @@
 import random
 
-import arcade as arcade
+import arcade
 
 
 class MyGame(arcade.Window):
