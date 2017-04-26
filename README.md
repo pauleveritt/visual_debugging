@@ -1,7 +1,5 @@
 ## Visual Debugging Webinar
 
-Webinar April 25 to show debugging visually.
-
 - Debugging without PyCharm's debugger: print and pdb
 - First use of the debugger (and the Cython speedups)
 - Breakpoints
@@ -75,19 +73,14 @@ Webinar April 25 to show debugging visually.
 ### Debug During Testing
 
 - Problem: TDD for "Don't show score when mouse is moving"
-
 - Write a test to see if score goes up on collision
-
 - It fails, I'm confused
-
 - Use debugging
-
 - Fix tests, clear breakpoint, re-run
 
 ### Attach to Process
 
 - Run ``game.py`` from command line
-
 - Use "Attach to Process" and then debug it
 
 ### Extract Type Information
@@ -98,20 +91,13 @@ Webinar April 25 to show debugging visually.
 ### Django and Flask 
 
 - Open Flask project
-
 - Set a breakpoint in a template
 
 ### Extra Credit
 
 - NodeJS/Chrome debugging
-
 - Configuring Stepping 
-
 - Keyboard shortcuts for stepping
-
 - Show Execution Point button in toolbar when you get lost
-
 - Mute Breakpoints button
-
 - Inspect watch value in separate window
-
