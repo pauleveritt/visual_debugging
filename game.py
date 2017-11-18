@@ -29,7 +29,7 @@ class MyGame(arcade.Window):
         arcade.draw_text(output, 100, 100, arcade.color.WHITE)
         self.all_sprites_list.draw()
 
-    def animate(self, delta_time: float) -> None:
+    def update(self, delta_time: float) -> None:
         self.all_sprites_list.update()
         hit_list = arcade.check_for_collision_with_list(
             self.player_sprite,
