@@ -1,3 +1,7 @@
+## Repo
+
+### `https://githubcom/pauleveritt/visual_debugging`
+
 ## Visual Debugging Webinar
 
 - Debugging without PyCharm's debugger: print and pdb
@@ -14,51 +18,66 @@
 - Django/Flask template debugging
 - Viewing numpy/pandas data frames
 
+### Setup
 
+- Darcula, big font
+- Tab-less, clutter-free
+- View -> Description of Actions
 
 ### Old-Fashioned Debugging
 
 - Problem: Where is 0,0
-- print statements
+- print statements in on_mouse_motion
 - import pdb; pdb.set_trace()
+- `p x` and `p y`
 
 
 ### Visual Debugging
 
 - Run program like normal, under the debugger
-- Install Cython speedups
 - Use breakpoint to solve first problem
 
 ### Poking Around
 
 - Problem: I want to use f-string `f'Score: {self.score:02d}'` but I'm not sure how
 - Interactive would help
-- Set breakpoint, then use Evaluate Expression
+- Set breakpoint
+- Use the inline comment values to see variables
+- Use Evaluate Expression
 - Or, Console
-- Install iPython and use it
+- Install ipython and use it
 
 ### Breakpoints
 
 - Problem: What is that "delta_time" thing?
-- Set breakpoint, observe value, click "Continue"
+- Set breakpoint, observe value, click "Continue", check again
 - Clear breakpoint, click "Continue"
-- Problem: wrong filename, what directory am I in?
+- Resume
+- Set a different breakpoint without restarting
+- Problem: typo in filename, what directory am I in?
 - Any Exception breakpoint
+- Explain  "Frames" to see what called it
+- Conditional Breakpoint: Score > 9 (in double digits)
 
 ## Stepping
 
 - Problem: 50 coins at random positions
-- Add for loop, but is random doing the right thing?
+- Stepping 1: for loop, but is random doing the right thing?
 - Set breakpoint, start regular stepping
 - Set breakpoint outside, and step into
+- Step *into* `arcade.Sprite` constructor, then step out
 - Ditto, step over
+- Step accidentally into random, show Step Into My Code
+- Run to Cursor
 - Problem: How does Arcade collisions work?
+- Stepping 2
 - Add code then step into
 
 ### Watch Expressions
 
 - Problem: Are the number of coins actually decreasing?
-- Set breakpoint in for coin in hit_list
+- Set breakpoint in for coin in hit_list and stop there
+- Ugh, lots of things to scroll through
 - Add a watch expression: len(self.coin_list)
 - Cause collision with multiple coins
 - Step through and see the watch expression value
@@ -66,14 +85,17 @@
 ### Stack Frames
 
 - Problem: Which coin is in _set_center_x?
+- Set breakpoint after "Stack Frames"
 - In for loop, step into setting the x
-- Move back up the stack
+- Reveals that `center_x` is actually a *property*, not an attribute
+- Move back up the stack to see which coin we're on `i`
 - Observe the watch expression and self.score
 
 ### Debug During Testing
 
 - Problem: TDD for "Don't show score when mouse is moving"
 - Write a test to see if score goes up on collision
+- First, go into "TDD Mode", open `test_mygame`
 - It fails, I'm confused
 - Use debugging
 - Fix tests, clear breakpoint, re-run
@@ -85,19 +107,12 @@
 
 ### Extract Type Information
 
-- Preferences -> Build -> Python Debugger, checkbox for 
-  `Collect`
+- Preferences -> Build -> Python Debugger, checkbox for  `Collect`
+- Run game under debugger, move around
+- Alt-Enter on `__init__`
 
 ### Django and Flask 
 
-- Open Flask project
+- Wouldn't it be nice to do breakpoints in...templates?!
+- Open Django project
 - Set a breakpoint in a template
-
-### Extra Credit
-
-- NodeJS/Chrome debugging
-- Configuring Stepping 
-- Keyboard shortcuts for stepping
-- Show Execution Point button in toolbar when you get lost
-- Mute Breakpoints button
-- Inspect watch value in separate window
