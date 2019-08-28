@@ -16,7 +16,6 @@
 - Debugging during testing
 - Extracting type information
 - Django/Flask template debugging
-- Viewing numpy/pandas data frames
 
 ### Setup
 
